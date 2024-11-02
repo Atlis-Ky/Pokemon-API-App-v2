@@ -1,35 +1,31 @@
-import  Header  from "./components/Header"
-import  PokeCard  from "./components/PokeCard"
-import SideNav  from "./components/SideNav"
+import Header from "./components/Header";
+import PokeCard from "./components/PokeCard";
+import SideNav from "./components/SideNav";
 
-import { useState } from "react"
+import { useState } from "react";
 
 function App() {
- 
-  const [selectedPokemon, setSelectedPokemon] = useState(0)
-  const [showSideMenu, setShowSideMenu] = useState(true) // this does the opposite of what it should for some reason, when showSideMenu set to true, its actually false haha
+  const [selectedPokemon, setSelectedPokemon] = useState(0);
+  const [showSideMenu, setShowSideMenu] = useState(false);
 
   function handleToggleMenu() {
-    setShowSideMenu(!showSideMenu)
+    setShowSideMenu(!showSideMenu);
   }
 
-  function handleCloseMenu() {
-    setShowSideMenu(true)
-  }
-  
   return (
     <>
       <Header handleToggleMenu={handleToggleMenu} />
 
-      <SideNav 
-       showSideMenu={showSideMenu}
-       selectedPokemon={selectedPokemon}
-       setSelectedPokemon={setSelectedPokemon}
-       handleCloseMenu={handleCloseMenu} />
+      <SideNav
+        showSideMenu={showSideMenu}
+        selectedPokemon={selectedPokemon}
+        setSelectedPokemon={setSelectedPokemon}
+        handleToggleMenu={handleToggleMenu}
+      />
 
-      <PokeCard selectedPokemon={selectedPokemon} /> 
+      <PokeCard selectedPokemon={selectedPokemon} />
     </>
-  )
+  );
 }
 
-export default App
+export default App;

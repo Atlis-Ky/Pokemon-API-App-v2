@@ -1,3 +1,5 @@
+
+/* array of all gen1 pokemon */ 
 export const first151Pokemon = [
   "Bulbasaur", "Ivysaur", "Venusaur", "Charmander", "Charmeleon", "Charizard", "Squirtle", "Wartortle", "Blastoise",
   "Caterpie", "Metapod", "Butterfree", "Weedle", "Kakuna", "Beedrill", "Pidgey", "Pidgeotto", "Pidgeot",
@@ -17,6 +19,7 @@ export const first151Pokemon = [
   "Zapdos", "Moltres", "Dratini", "Dragonair", "Dragonite", "Mewtwo", "Mew"
 ]
 
+/* CSS data for each type to pull from when displaying types underneath names with dynamic styling */
 
 export const pokemonTypeColors = {
   normal: {
@@ -99,6 +102,7 @@ export function getPokedexNumber(index) {
   return index + 1
 }
 
+/* function that converts the index number to the pokedex number by adding the relevant 0's at the start of each number if they are needed */
 export function getFullPokedexNumber(index) {
   return `${index + 1 > 99 ? index + 1 : index + 1 > 9 ? `0${index + 1}` : `00${index + 1}`}`
 }
